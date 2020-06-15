@@ -1,8 +1,8 @@
 BOT_NAME = 'manga'
 SPIDER_MODULES = ['manga.spiders']
 NEWSPIDER_MODULE = 'manga.spiders'
-CONCURRENT_REQUESTS = 1
-# DOWNLOAD_DELAY = 3
+# CONCURRENT_REQUESTS = 1
+# DOWNLOAD_DELAY = 5
 # USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'
 
 SPLASH_URL = 'http://localhost:8050'
