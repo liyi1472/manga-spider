@@ -1,5 +1,4 @@
 from scrapy.pipelines.images import ImagesPipeline
-from scrapy.exceptions import DropItem
 from scrapy import Request
 
 
