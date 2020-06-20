@@ -8,7 +8,9 @@ class FzdmSpider(scrapy.Spider):
 
     def start_requests(self):
         # 153《鬼灭之刃》1-205话完结
-        base = 'http://manhua.fzdm.com/153/'
+        # base = 'http://manhua.fzdm.com/153/'
+        # 2《海贼王》
+        base = 'http://manhua.fzdm.com/2/'
         yield SplashRequest(base, self.parseBook, args={'wait': 5})
         
     def parseBook(self, response):
@@ -24,7 +26,10 @@ class FzdmSpider(scrapy.Spider):
         item = MangaItem()
         item['book'] = response.meta['book']
         item['page'] = response.css(".navigation .button-success::text").get()
-        item['src'] = response.css("#mhpic::attr('src')").get()
+        # 鬼灭之刃
+        # item['src'] = response.css("#mhpic::attr('src')").get()
+        # 海贼王
+        item['src'] = response.css("#mhimg0::attr('src')").get()
         yield item
         if '下一页' == response.css('.navigation .pure-button.pure-button-primary::text').getall()[-1]:
             next_url = response.css('.navigation .pure-button.pure-button-primary::attr("href")').getall()[-1]
