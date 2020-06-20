@@ -8,8 +8,8 @@ class FzdmSpider(Spider):
     name = 'fzdm'
 
     def start_requests(self):
-        # 鬼灭之刃:153
-        # 海贼王:2
+        # 海贼王    => 2
+        # 鬼灭之刃  => 153
         base = 'http://manhua.fzdm.com/2/'
         yield Request(base, self.parseBook)
         
